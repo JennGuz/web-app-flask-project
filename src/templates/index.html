@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict House Price</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Enter the Details to Predict House Price</h1>
+    <form method="POST">
+        <label for="area">Area:</label><br>
+        <input type="text" id="area" name="area" required><br>
+
+        <label for="bedrooms">Bedrooms:</label><br>
+        <input type="text" id="bedrooms" name="bedrooms" required><br>
+
+        <label for="bathrooms">Bathrooms:</label><br>
+        <input type="text" id="bathrooms" name="bathrooms" required><br>
+
+        <label for="stories">Stories:</label><br>
+        <input type="text" id="stories" name="stories" required><br>
+
+        <label for="parking">Parking:</label><br>
+        <input type="text" id="parking" name="parking" required><br>
+
+        <label for="mainroad">Main Road:</label><br>
+        <select name="mainroad" id="mainroad" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br>
+
+        <label for="guestroom">Guestroom:</label><br>
+        <select name="guestroom" id="guestroom" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br>
+
+        <label for="basement">Basement:</label><br>
+        <select name="basement" id="basement" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br>
+
+        <label for="hotwaterheating">Hot Water Heating:</label><br>
+        <select name="hotwaterheating" id="hotwaterheating" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br>
+
+        <label for="airconditioning">Air Conditioning:</label><br>
+        <select name="airconditioning" id="airconditioning" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br>
+
+        <label for="prefarea">Preferred Area:</label><br>
+        <select name="prefarea" id="prefarea" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select><br>
+
+        <label for="furnishingstatus">Furnishing Status:</label><br>
+        <select name="furnishingstatus" id="furnishingstatus" required>
+            <option value="furnished">Furnished</option>
+            <option value="semi-furnished">Semi-Furnished</option>
+            <option value="unfurnished">Unfurnished</option>
+        </select><br>
+
+        <label for="price_category">Price Category:</label><br>
+        <select name="price_category" id="price_category" required>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
+            <option value="Very High">Very High</option>
+        </select><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if predicted_price %}
+        <h2>Predicted Price: ${{ predicted_price }} Million</h2>
+    {% endif %}
+</body>
+</html>
